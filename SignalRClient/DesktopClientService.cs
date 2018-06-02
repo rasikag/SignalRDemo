@@ -1,5 +1,6 @@
 ﻿using System.ServiceProcess;
 using NLog;
+using System.Timers;
 
 namespace SignalRClient
 {
@@ -12,6 +13,7 @@ namespace SignalRClient
 
         protected override void OnStart(string[] args)
         {
+
         }
 
         protected override void OnStop()
