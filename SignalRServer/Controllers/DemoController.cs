@@ -1,4 +1,6 @@
-﻿using System.Web.Http;
+﻿using Microsoft.AspNet.SignalR;
+using SignalRServer.SignalRHub;
+using System.Web.Http;
 
 namespace SignalRServer.Controllers
 {
@@ -8,6 +10,8 @@ namespace SignalRServer.Controllers
         [Route("trigger-event")]
         public IHttpActionResult TriggerEvent()
         {
+            var hubContext = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
+            hubContext.Clients.All.broadCastMessage("your message here");
             return Ok();
         }
     }
