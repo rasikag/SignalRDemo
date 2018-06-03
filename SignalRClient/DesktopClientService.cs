@@ -14,7 +14,7 @@ namespace SignalRClient
         protected override void OnStart(string[] args)
         {
             Timer timer = new Timer();
-            timer.Interval = 60000; // 60 seconds  
+            timer.Interval = 60000; 
             timer.Elapsed += new System.Timers.ElapsedEventHandler(this.OnTimer);
             timer.Start();
         }
